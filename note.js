@@ -17,11 +17,3 @@ Note.prototype.listNotes = function(){
 Note.prototype.grab = function(index){
   return this.notes[index];
 };
-
-note = new Note();
-note.add("hello there mr man how are you today");
-note.add("im fine thank you how is tyhe weather are you ok");
-note.add("i wonder what the soccer match is like i hope its good");
-
-console.log(note.notes)
-console.log(note.listNotes())

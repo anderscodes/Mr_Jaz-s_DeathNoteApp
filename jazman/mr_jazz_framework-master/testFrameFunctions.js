@@ -46,7 +46,7 @@ Expect.prototype.toReturn = function(value){
 
 Expect.prototype.toBeEmpty = function(){
   if (this.value.length === 0) {
-    console.log('Yes, it is an empty array')
+    console.log('Yes, it is empty')
   } else {
     console.log('No, it is not empty')
   }
