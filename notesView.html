@@ -31,7 +31,7 @@
 
             li.setAttribute('class', index)
             a.setAttribute('id', index)
-            a.setAttribute('onclick', 'note.grab(document.getElementById(index).value);')
+            a.setAttribute('onclick', 'expandNote(event.target.id);')
             ul.appendChild(li);
             li.appendChild(a);
             a.innerHTML= last_note;
@@ -41,16 +41,10 @@
         if(note.notes.length > 0){
         printList();}
 
-        // function expandNote() {
-        //   document.getElementsByTagName('a').innerHTML = expand_note
+        function expandNote(index) {
 
-        // var x = document.getElementByTagName('a');
-        // if ( x.style.display === "none") {
-        //   x.style.display = "block";
-        // } else {
-        //   x.style.display = "none";
-        // }
-      // }
+          document.getElementById(index).innerHTML= note.grab(index)
+        }
     </script>
   </body>
 </html>
