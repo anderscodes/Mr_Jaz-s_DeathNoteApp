@@ -1,10 +1,9 @@
 function Note(){
-  this.notes = ["good byedfsdhfdshjfsghgshsdghsdkghsekugsduhkgs"];
+  this.notes = [];
 };
 
 Note.prototype.add = function(text){
   this.notes.push(text);
-  console.log(this.notes);
 };
 
 Note.prototype.listNotes = function(){
@@ -14,10 +13,6 @@ Note.prototype.listNotes = function(){
     list.push(this.notes[i].slice(0, 19));
   };
   return list;
-};
-
-Note.prototype.delete = function(index){
-  delete this.notes[index];
 };
 
 Note.prototype.grab = function(index){
