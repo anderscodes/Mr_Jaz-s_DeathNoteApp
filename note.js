@@ -1,10 +1,9 @@
 function Note(){
-  this.notes = ["good byedfsdhfdshjfsghgshsdghsdkghsekugsduhkgs"];
+  this.notes = [];
 };
 
 Note.prototype.add = function(text){
   this.notes.push(text);
-  console.log(this.notes);
 };
 
 Note.prototype.listNotes = function(){
