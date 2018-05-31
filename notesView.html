@@ -21,14 +21,17 @@
           document.getElementById('myListDiv').appendChild(ul);
           var index = 0
 
+          expand_note = note.grab()
+
           function printList() {
             notes = note.listNotes();
             last_note = notes[notes.length - 1];
             var li = document.createElement('li');
             var a = document.createElement('a');
 
-            li.setAttribute('id', index)
-            a.setAttribute('href', note.notes[index])
+            li.setAttribute('class', index)
+            a.setAttribute('id', index)
+            a.setAttribute('onclick', 'note.grab(document.getElementById(index).value);')
             ul.appendChild(li);
             li.appendChild(a);
             a.innerHTML= last_note;
@@ -38,6 +41,16 @@
         if(note.notes.length > 0){
         printList();}
 
+        // function expandNote() {
+        //   document.getElementsByTagName('a').innerHTML = expand_note
+
+        // var x = document.getElementByTagName('a');
+        // if ( x.style.display === "none") {
+        //   x.style.display = "block";
+        // } else {
+        //   x.style.display = "none";
+        // }
+      // }
     </script>
   </body>
 </html>
