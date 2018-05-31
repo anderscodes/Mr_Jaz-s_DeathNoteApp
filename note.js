@@ -1,5 +1,5 @@
 function Note(){
-  this.notes = [];
+  this.notes = ["good byedfsdhfdshjfsghgshsdghsdkghsekugsduhkgs"];
 };
 
 Note.prototype.add = function(text){
@@ -9,7 +9,7 @@ Note.prototype.add = function(text){
 
 Note.prototype.listNotes = function(){
   var list = [];
-  console.log(this.notes)
+
   for (var i = 0; i < this.notes.length; i++){
     list.push(this.notes[i].slice(0, 19));
   };

@@ -13,12 +13,17 @@
           console.log(note.notes)
           ul = document.createElement('ul');
           document.getElementById('myListDiv').appendChild(ul);
-
-          notes.forEach(function(note){
+          var index = 0
+          function printList() {notes.forEach(function(note){
             var li = document.createElement('li');
+            li.setAttribute('id', index)
             ul.appendChild(li);
-            li.innerHTML += note;
+            document.getElementById(index).textContent = note
+            index ++
           });
+        };
+
+        printList();
         // };
 
     </script>
@@ -28,7 +33,7 @@
     <form>
       Enter your next ToDo Item:<br>
       <input id="new_to_do" style=height:200px;font-size:14pt type="text"><br>
-      <input id="submit" type="button" value="Submit" onclick="note.add(document.getElementById('new_to_do').value);">
+      <input id="submit" type="button" value="Submit" onclick="note.add(document.getElementById('new_to_do').value); printList();">
       <input id="delete" type="button" value="Delete" onclick="note.delete();">
     </form>
   </head>
