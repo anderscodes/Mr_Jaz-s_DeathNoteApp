@@ -4,7 +4,12 @@
     <script src='note.js'></script>
     <meta charset="utf-8">
   </head>
+  <style>
+    #secondPage {display: none;}
+
+  </style>
   <body>
+    <div id=frontPage>
     <h1>Your Jazz ToDo List</h1>
 
     <form>
@@ -14,37 +19,11 @@
     </form>
 
     <div id="myListDiv"></div>
-    <script type="text/javascript">
-
-          note = new Note();
-          ul = document.createElement('ul');
-          document.getElementById('myListDiv').appendChild(ul);
-          var index = 0
-
-          expand_note = note.grab()
-
-          function printList() {
-            notes = note.listNotes();
-            last_note = notes[notes.length - 1];
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-
-            li.setAttribute('class', index)
-            a.setAttribute('id', index)
-            a.setAttribute('onclick', 'expandNote(event.target.id);')
-            ul.appendChild(li);
-            li.appendChild(a);
-            a.innerHTML= last_note;
-            // document.getElementById(index).textContent = last_note
-            index ++
-          };
-        if(note.notes.length > 0){
-        printList();}
-
-        function expandNote(index) {
-
-          document.getElementById(index).innerHTML= note.grab(index)
-        }
-    </script>
+    </div>
+    <div id="secondPage">
+      <p id="fullNote"></p>
+      <input type="submit" id="goBack" value="Go Back" onclick="goBack();">
+    </div>
+  <script src="frontEndJS.js"></script>
   </body>
 </html>
