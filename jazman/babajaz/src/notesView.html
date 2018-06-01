@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src='note.js'></script>
+    <meta charset="utf-8">
+  </head>
+  <style>
+    #secondPage {display: none;}
+
+  </style>
+  <body>
+    <div id=frontPage>
+    <h1>Your Jazz ToDo List</h1>
+
+    <form>
+      Enter your next ToDo Item:<br>
+      <input id="new_to_do" style=height:200px;font-size:14pt type="text"><br>
+      <input id="submit" type="button" value="Submit" onclick="note.add(document.getElementById('new_to_do').value); printList();">
+    </form>
+
+    <div id="myListDiv"></div>
+    </div>
+    <div id="secondPage">
+      <p id="fullNote"></p>
+      <input type="submit" id="goBack" value="Go Back" onclick="goBack();">
+    </div>
+  <script src="frontEndJS.js"></script>
+  <script src="../babajaz.js"></script>
+  <script src="../spec/notesSpec.js"></script>
+
+  </body>
+</html>
